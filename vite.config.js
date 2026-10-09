@@ -12,5 +12,7 @@ function lanIp() {
 }
 
 export default defineConfig({
+  // Use /human-os-game/ as base when building for GitHub Pages, localhost otherwise
+  base: process.env.GITHUB_ACTIONS ? '/human-os-game/' : '/',
   define: { __LAN_IP__: JSON.stringify(lanIp()) },
 });
